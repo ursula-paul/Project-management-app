@@ -29,15 +29,21 @@ export const SingleTodo = ({ todo, todos, setTodos }: Props) => {
 	const handleEdit = (e: React.FormEvent, id: number) => {
 		e.preventDefault();
 
-		setTodos(todos.map((todo) => todo.id));
+		setTodos(
+			todos.map((todo) => (todo.id === id ? { ...todo, todo: editTodo } : todo))
+		);
+		setEdit(false);
 	};
+
+	const first = useRef(second);
+
 	return (
 		<form className="todos__single" onSubmit={(e) => handleEdit(e, todo.id)}>
 			{edit ? (
 				<input
 					value={editTodo}
 					onChange={(e) => setEditTodo(e.target.value)}
-					className="todos__single--test"
+					className="todos__single--text"
 				/>
 			) : todo.isDone ? (
 				<s className="todos__single--text">{todo.todo}</s>
