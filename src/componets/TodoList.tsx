@@ -12,16 +12,5 @@ export const TodoList: React.FC<Props> = ({
 	todos,
 	setTodos,
 }: Props): JSX.Element => {
-	return (
-		<div className="todos">
-			{todos.map((todo) => (
-				<SingleTodo
-					todo={todo}
-					key={todo.id}
-					todos={todos}
-					setTodos={setTodos}
-				/>
-			))}
-		</div>
-	);
+	return <div></div>;
 };
