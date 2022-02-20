@@ -51,6 +51,7 @@
 
 .todos__single {
 	display: flex;
+	width: 29.5%;
 	border-radius: 5px;
 	padding: 20px;
 	margin-top: 15px;
@@ -62,4 +63,26 @@
 	padding: 5px;
 	border: none;
 	font-size: 20px;
+}
+
+.todos__single--text:focus {
+	outline: none;
+}
+.icon {
+	margin-left: 10px;
+	font-size: 20px;
+	cursor: pointer;
+}
+@media (max-width: 700px) {
+	.input {
+		width: 95%;
+	}
+	.container {
+		width: 95%;
+		flex-direction: column;
+	}
+	.todos {
+		width: 95%;
+		margin-bottom: 10px;
+	}
 }
